@@ -23,10 +23,10 @@
 #define __STATS_H__
 
 /* Add Your Declarations and Function Comments here */ 
-void print_statistics(int median, int mean, int maximum, int minimum);
+void print_statistics(unsigned char median, unsigned char mean, unsigned char maximum, unsigned char minimum);
 void print_array();
 int find_median(char *arrayData, int arrayLength);
-int find_mean(char *arrayData, int arrayLength);
+int find_mean(unsigned char *arrayData, int arrayLength);
 int find_maximum(char *arrayData, int arrayLength);
 int find_minimum(char *arrayData, int arrayLength);
 void sort_array();
@@ -48,8 +48,9 @@ void sort_array();
 /**
  * @brief Print array
  *
- * <extended description>
+ * Given an array, prints the array to the screen
  *
+ * @param <var> <description>
  * @param <var> <description>
  *
  * @return <var> <description>
@@ -63,7 +64,7 @@ void sort_array();
  * @param arrayData This will be the data of the given array
  * @param arrayLength This will be the length of the given array
  *
- * @return result An int variable for the median value
+ * @return result An unsigned char variable for the median value
  */
 
 /**
@@ -74,7 +75,7 @@ void sort_array();
  * @param arrayData This will be the data of the given array
  * @param arrayLength This will be the length of the given array
  *
- * @return result An int variable for the mean value
+ * @return result An unsigned char variable for the mean value
  */
 
 /**
@@ -85,7 +86,7 @@ void sort_array();
  * @param arrayData This will be the data of the given array
  * @param arrayLength This will be the length of the given array
  *
- * @return result An int variable for the maximum value
+ * @return result An unsigned char variable for the maximum value
  */
 
 /**
@@ -96,13 +97,13 @@ void sort_array();
  * @param arrayData This will be the data of the given array
  * @param arrayLength This will be the length of the given array
  *
- * @return result An int variable for the minimum value
+ * @return result An unsigned char variable for the minimum value
  */
 
 /**
  * @brief sort_array
  *
- * <extended description>
+ * Given an array, sorts the array from largest to smallest.
  *
  * @param <var> <description>
  *

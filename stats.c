@@ -36,13 +36,22 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  unsigned char medianM=0, meanM=0, maximumM=0, minimumM=0;
   /* Statistics and Printing Functions Go Here */
+  medianM = find_median(test, SIZE);
+  meanM = find_mean(test, SIZE);
+  maximumM = find_maximum(test, SIZE);
+  minimumM = find_minimum(test, SIZE);
 
+  print_statistics(medianM, meanM, maximumM, minimumM);
 }
 
 /* Add other Implementation File Code Here */
-void print_statistics(int median, int mean, int maximum, int minimum){
-
+void print_statistics(unsigned char median, unsigned char mean, unsigned char maximum, unsigned char minimum){
+  printf("Median = %d\n", median);
+  printf("Mean = %d\n", mean);
+  printf("Minimum = %d\n", maximum);
+  printf("Maximum = %d\n", minimum);
 }
 
 void print_array(){
@@ -52,8 +61,14 @@ int find_median(char *arrayData, int arrayLength){
 	return 0;
 }
 
-int find_mean(char *arrayData, int arrayLength){
-	return 0;
+int find_mean(unsigned char *arrayData, int arrayLength){
+  unsigned char mean=0;
+  int i=0, suma=0;
+  for(i; i<arrayLength; i++){
+    suma += arrayData[i];
+  }
+  mean = suma/arrayLength;
+	return mean;
 }
 
 int find_maximum(char *arrayData, int arrayLength){
