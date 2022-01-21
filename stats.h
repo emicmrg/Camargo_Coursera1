@@ -24,11 +24,11 @@
 
 /* Add Your Declarations and Function Comments here */ 
 void print_statistics(unsigned char median, unsigned char mean, unsigned char maximum, unsigned char minimum);
-void print_array();
-int find_median(char *arrayData, int arrayLength);
+void print_array(unsigned char *arrayData, int arrayLength);
+int find_median(unsigned char *arrayData, int arrayLength);
 int find_mean(unsigned char *arrayData, int arrayLength);
-int find_maximum(char *arrayData, int arrayLength);
-int find_minimum(char *arrayData, int arrayLength);
+int find_maximum(unsigned char *arrayData, int arrayLength);
+int find_minimum(unsigned char *arrayData, int arrayLength);
 void sort_array();
 
 /**
@@ -50,10 +50,10 @@ void sort_array();
  *
  * Given an array, prints the array to the screen
  *
- * @param <var> <description>
- * @param <var> <description>
+ * @param arrayData This will be the data of the given array
+ * @param arrayLength This will be the length of the given array
  *
- * @return <var> <description>
+ * @return No return because it is a void function
  */
 
 /**

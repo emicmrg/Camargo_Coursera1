@@ -44,6 +44,7 @@ void main() {
   minimumM = find_minimum(test, SIZE);
 
   print_statistics(medianM, meanM, maximumM, minimumM);
+  print_array(test, SIZE);
 }
 
 /* Add other Implementation File Code Here */
@@ -54,10 +55,18 @@ void print_statistics(unsigned char median, unsigned char mean, unsigned char ma
   printf("Maximum = %d\n", minimum);
 }
 
-void print_array(){
+void print_array(unsigned char *arrayData, int arrayLength){
+  int i=0;
+  for(i; i<arrayLength; i++){
+    if((i%8)==0){
+      printf("\n");
+    }
+    printf("%d, ", arrayData[i]);
+  }
+  printf("\n");
 }
 
-int find_median(char *arrayData, int arrayLength){
+int find_median(unsigned char *arrayData, int arrayLength){
 	return 0;
 }
 
@@ -71,11 +80,11 @@ int find_mean(unsigned char *arrayData, int arrayLength){
 	return mean;
 }
 
-int find_maximum(char *arrayData, int arrayLength){
+int find_maximum(unsigned char *arrayData, int arrayLength){
 	return 0;
 }
 
-int find_minimum(char *arrayData, int arrayLength){
+int find_minimum(unsigned char *arrayData, int arrayLength){
 	return 0;
 }
 
