@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Analyze an array of unsigned char
  *
- * <Add Extended Description Here>
+ * This code will analyze an array and get some statistics such as minimum, maximum, median and mean.
+ * In addition, the original array will be printed and reorder from the 
+ * large to small value and then, printed too.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Emilio Camargo
+ * @date 01/20/2022
  *
  */
 
@@ -38,25 +40,29 @@ void main() {
   /* Other Variable Declarations Go Here */
   unsigned char medianM=0, meanM=0, maximumM=0, minimumM=0;
   /* Statistics and Printing Functions Go Here */
+  print_array(test, SIZE);
+  sort_array(test, SIZE);
+
   medianM = find_median(test, SIZE);
   meanM = find_mean(test, SIZE);
   maximumM = find_maximum(test, SIZE);
   minimumM = find_minimum(test, SIZE);
 
   print_statistics(medianM, meanM, maximumM, minimumM);
-  print_array(test, SIZE);
 }
 
 /* Add other Implementation File Code Here */
 void print_statistics(unsigned char median, unsigned char mean, unsigned char maximum, unsigned char minimum){
+  printf("----STATISTICS----\n");
   printf("Median = %d\n", median);
   printf("Mean = %d\n", mean);
-  printf("Minimum = %d\n", maximum);
-  printf("Maximum = %d\n", minimum);
+  printf("Minimum = %d\n", minimum);
+  printf("Maximum = %d\n", maximum);
 }
 
 void print_array(unsigned char *arrayData, int arrayLength){
   int i=0;
+  printf("----ORIGINAL ARRAY----");
   for(i; i<arrayLength; i++){
     if((i%8)==0){
       printf("\n");
@@ -67,7 +73,14 @@ void print_array(unsigned char *arrayData, int arrayLength){
 }
 
 int find_median(unsigned char *arrayData, int arrayLength){
-	return 0;
+  unsigned char median=0;
+  
+  if((arrayLength%2)==0){
+    median = (arrayData[arrayLength/2]+arrayData[(arrayLength/2)-1])/2;
+  } else{
+    median = arrayData[(arrayLength/2)];
+  }
+	return median;
 }
 
 int find_mean(unsigned char *arrayData, int arrayLength){
@@ -81,13 +94,38 @@ int find_mean(unsigned char *arrayData, int arrayLength){
 }
 
 int find_maximum(unsigned char *arrayData, int arrayLength){
-	return 0;
+  unsigned char maximum=0;
+  
+  maximum = arrayData[arrayLength-arrayLength];
+
+	return maximum;
 }
 
 int find_minimum(unsigned char *arrayData, int arrayLength){
-	return 0;
+  unsigned char minimum=0;
+  
+  minimum = arrayData[arrayLength-1];
+
+	return minimum;
 }
 
-void sort_array(){
-
+void sort_array(unsigned char *arrayData, int arrayLength){
+  int i=39, j=39, pivote=0;
+  printf("----SORT ARRAY----");
+  for(i; i>=0; i--){
+    for(j=39; j>=0; j--){
+      if(arrayData[i]<arrayData[j]){
+        pivote = arrayData[i];
+        arrayData[i] = arrayData[j];
+        arrayData[j] = pivote;
+      }
+    }
+  }
+  for(i=0; i<arrayLength; i++){
+    if((i%8)==0){
+      printf("\n");
+    }
+    printf("%d, ", arrayData[i]);
+  }
+  printf("\n");
 }

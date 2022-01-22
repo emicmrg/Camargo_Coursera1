@@ -29,7 +29,7 @@ int find_median(unsigned char *arrayData, int arrayLength);
 int find_mean(unsigned char *arrayData, int arrayLength);
 int find_maximum(unsigned char *arrayData, int arrayLength);
 int find_minimum(unsigned char *arrayData, int arrayLength);
-void sort_array();
+void sort_array(unsigned char *arrayData, int arrayLength);
 
 /**
  * @brief Print statistics
@@ -105,9 +105,10 @@ void sort_array();
  *
  * Given an array, sorts the array from largest to smallest.
  *
- * @param <var> <description>
+ * @param arrayData This will be the data of the given array
+ * @param arrayLength This will be the length of the given array
  *
- * @return <var> <description>
+ * @return No return because it is a void function
  */
 
 
